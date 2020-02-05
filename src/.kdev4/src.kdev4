@@ -1,0 +1,58 @@
+[Buildset]
+BuildItems=@Variant(\x00\x00\x00\t\x00\x00\x00\x00\x00)
+
+[CMake]
+Build Directory Count=1
+Current Build Directory Index-Host System=0
+
+[CMake][CMake Build Directory 0]
+Build Directory Path=/home/serserar/projects/cpp/undeadhunter/src/build
+Build Type=Debug
+CMake Binary=/usr/local/bin/cmake
+CMake Executable=/usr/local/bin/cmake
+Environment Profile=
+Extra Arguments=
+Install Directory=/usr/local
+Runtime=Host System
+
+[Launch]
+Launch Configurations=Launch Configuration 0,Launch Configuration 1
+
+[Launch][Launch Configuration 0]
+Configured Launch Modes=execute
+Configured Launchers=nativeAppLauncher
+Name=undeadhunter
+Type=Native Application
+
+[Launch][Launch Configuration 0][Data]
+Arguments=\s-m 1 -w640 -h480 -f0
+Dependencies=@Variant(\x00\x00\x00\t\x00\x00\x00\x00\x00)
+Dependency Action=Nothing
+EnvironmentGroup=
+Executable=file:///home/serserar/projects/cpp/undeadhunter/src/build/undeadhunter
+External Terminal=konsole --noclose --workdir %workdir -e %exe
+Project Target=undeadhunter,uh_master
+Use External Terminal=false
+Working Directory=file:///home/serserar/projects/cpp/undeadhunter/src/../data
+isExecutable=true
+
+[Launch][Launch Configuration 1]
+Configured Launch Modes=execute
+Configured Launchers=nativeAppLauncher
+Name=tessfont
+Type=Native Application
+
+[Launch][Launch Configuration 1][Data]
+Arguments=../../data/media/interface/vs_font/NECK_ROMANCER_Regular.ttf NECK_ROMANCER_Regular 8 0.15:0.35:0.35:0.55 5 5 0.75:2.5 1.25 30 30 512 512 20 40 64 data/media/interface/vs_font/
+Dependencies=@Variant(\x00\x00\x00\t\x00\x00\x00\x00\x00)
+Dependency Action=Nothing
+EnvironmentGroup=
+Executable=file:///home/serserar/projects/cpp/undeadhunter/src/build/tessfont
+External Terminal=konsole --noclose --workdir %workdir -e %exe
+Project Target=undeadhunter,uh_master
+Use External Terminal=false
+Working Directory=
+isExecutable=true
+
+[Project]
+VersionControlSupport=kdevgit

@@ -1,0 +1,367 @@
+[
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++  -DSTANDALONE -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include  -g   -o CMakeFiles/uh_master.dir/shared/crypto.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/shared/crypto.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/shared/crypto.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++  -DSTANDALONE -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include  -g   -o CMakeFiles/uh_master.dir/shared/stream.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/shared/stream.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/shared/stream.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++  -DSTANDALONE -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include  -g   -o CMakeFiles/uh_master.dir/shared/tools.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/shared/tools.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/shared/tools.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++  -DSTANDALONE -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include  -g   -o CMakeFiles/uh_master.dir/engine/command.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/command.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/command.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++  -DSTANDALONE -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include  -g   -o CMakeFiles/uh_master.dir/engine/master.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/master.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/master.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/shared/crypto.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/shared/crypto.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/shared/crypto.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/shared/geom.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/shared/geom.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/shared/geom.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/shared/glemu.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/shared/glemu.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/shared/glemu.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/shared/stream.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/shared/stream.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/shared/stream.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/shared/tools.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/shared/tools.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/shared/tools.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/shared/zip.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/shared/zip.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/shared/zip.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/aa.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/aa.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/aa.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/bih.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/bih.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/bih.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/blend.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/blend.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/blend.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/client.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/client.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/client.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/command.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/command.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/command.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/console.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/console.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/console.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/dynlight.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/dynlight.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/dynlight.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/grass.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/grass.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/grass.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/light.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/light.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/light.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/main.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/main.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/main.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/material.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/material.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/material.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/menus.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/menus.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/menus.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/movie.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/movie.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/movie.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/normal.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/normal.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/normal.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/octa.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/octa.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/octa.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/octaedit.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/octaedit.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/octaedit.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/octarender.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/octarender.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/octarender.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/physics.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/physics.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/physics.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/pvs.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/pvs.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/pvs.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/rendergl.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/rendergl.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/rendergl.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/renderlights.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/renderlights.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/renderlights.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/rendermodel.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/rendermodel.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/rendermodel.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/renderparticles.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/renderparticles.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/renderparticles.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/rendersky.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/rendersky.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/rendersky.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/rendertext.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/rendertext.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/rendertext.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/renderva.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/renderva.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/renderva.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/server.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/server.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/server.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/serverbrowser.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/serverbrowser.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/serverbrowser.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/shader.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/shader.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/shader.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/sound.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/sound.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/sound.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/stain.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/stain.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/stain.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/texture.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/texture.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/texture.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/ui.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/ui.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/ui.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/water.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/water.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/water.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/world.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/world.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/world.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/engine/worldio.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/worldio.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/worldio.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/uhgame/ai.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/uhgame/ai.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/uhgame/ai.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/uhgame/client.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/uhgame/client.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/uhgame/client.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/uhgame/entities.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/uhgame/entities.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/uhgame/entities.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/uhgame/game.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/uhgame/game.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/uhgame/game.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/uhgame/render.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/uhgame/render.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/uhgame/render.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/uhgame/scoreboard.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/uhgame/scoreboard.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/uhgame/scoreboard.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/uhgame/server.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/uhgame/server.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/uhgame/server.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/uhgame/waypoint.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/uhgame/waypoint.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/uhgame/waypoint.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++   -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include -I/usr/local/include/SDL2  -g   -o CMakeFiles/undeadhunter.dir/uhgame/weapon.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/uhgame/weapon.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/uhgame/weapon.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++  -DSTANDALONE -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include  -g   -o CMakeFiles/uh_server.dir/shared/crypto.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/shared/crypto.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/shared/crypto.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++  -DSTANDALONE -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include  -g   -o CMakeFiles/uh_server.dir/shared/stream.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/shared/stream.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/shared/stream.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++  -DSTANDALONE -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include  -g   -o CMakeFiles/uh_server.dir/shared/tools.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/shared/tools.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/shared/tools.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++  -DSTANDALONE -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include  -g   -o CMakeFiles/uh_server.dir/engine/command.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/command.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/command.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++  -DSTANDALONE -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include  -g   -o CMakeFiles/uh_server.dir/engine/server.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/server.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/server.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++  -DSTANDALONE -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include  -g   -o CMakeFiles/uh_server.dir/engine/worldio.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/engine/worldio.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/engine/worldio.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++  -DSTANDALONE -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include  -g   -o CMakeFiles/uh_server.dir/game/entities.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/game/entities.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/game/entities.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build",
+  "command": "/usr/bin/c++  -DSTANDALONE -I/home/serserar/projects/cpp/undeadhunter/src -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include  -g   -o CMakeFiles/uh_server.dir/game/server.cpp.o -c /home/serserar/projects/cpp/undeadhunter/src/game/server.cpp",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/game/server.cpp"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build/third_party",
+  "command": "/usr/bin/cc -DHAS_FCNTL=1 -DHAS_GETADDRINFO=1 -DHAS_GETHOSTBYADDR_R=1 -DHAS_GETHOSTBYNAME_R=1 -DHAS_GETNAMEINFO=1 -DHAS_INET_NTOP=1 -DHAS_INET_PTON=1 -DHAS_MSGHDR_FLAGS=1 -DHAS_POLL=1 -DHAS_SOCKLEN_T=1 -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include  -g   -Wno-error -o CMakeFiles/enet.dir/enet/callbacks.c.o   -c /home/serserar/projects/cpp/undeadhunter/src/third_party/enet/callbacks.c",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/callbacks.c"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build/third_party",
+  "command": "/usr/bin/cc -DHAS_FCNTL=1 -DHAS_GETADDRINFO=1 -DHAS_GETHOSTBYADDR_R=1 -DHAS_GETHOSTBYNAME_R=1 -DHAS_GETNAMEINFO=1 -DHAS_INET_NTOP=1 -DHAS_INET_PTON=1 -DHAS_MSGHDR_FLAGS=1 -DHAS_POLL=1 -DHAS_SOCKLEN_T=1 -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include  -g   -Wno-error -o CMakeFiles/enet.dir/enet/compress.c.o   -c /home/serserar/projects/cpp/undeadhunter/src/third_party/enet/compress.c",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/compress.c"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build/third_party",
+  "command": "/usr/bin/cc -DHAS_FCNTL=1 -DHAS_GETADDRINFO=1 -DHAS_GETHOSTBYADDR_R=1 -DHAS_GETHOSTBYNAME_R=1 -DHAS_GETNAMEINFO=1 -DHAS_INET_NTOP=1 -DHAS_INET_PTON=1 -DHAS_MSGHDR_FLAGS=1 -DHAS_POLL=1 -DHAS_SOCKLEN_T=1 -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include  -g   -Wno-error -o CMakeFiles/enet.dir/enet/host.c.o   -c /home/serserar/projects/cpp/undeadhunter/src/third_party/enet/host.c",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/host.c"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build/third_party",
+  "command": "/usr/bin/cc -DHAS_FCNTL=1 -DHAS_GETADDRINFO=1 -DHAS_GETHOSTBYADDR_R=1 -DHAS_GETHOSTBYNAME_R=1 -DHAS_GETNAMEINFO=1 -DHAS_INET_NTOP=1 -DHAS_INET_PTON=1 -DHAS_MSGHDR_FLAGS=1 -DHAS_POLL=1 -DHAS_SOCKLEN_T=1 -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include  -g   -Wno-error -o CMakeFiles/enet.dir/enet/list.c.o   -c /home/serserar/projects/cpp/undeadhunter/src/third_party/enet/list.c",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/list.c"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build/third_party",
+  "command": "/usr/bin/cc -DHAS_FCNTL=1 -DHAS_GETADDRINFO=1 -DHAS_GETHOSTBYADDR_R=1 -DHAS_GETHOSTBYNAME_R=1 -DHAS_GETNAMEINFO=1 -DHAS_INET_NTOP=1 -DHAS_INET_PTON=1 -DHAS_MSGHDR_FLAGS=1 -DHAS_POLL=1 -DHAS_SOCKLEN_T=1 -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include  -g   -Wno-error -o CMakeFiles/enet.dir/enet/packet.c.o   -c /home/serserar/projects/cpp/undeadhunter/src/third_party/enet/packet.c",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/packet.c"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build/third_party",
+  "command": "/usr/bin/cc -DHAS_FCNTL=1 -DHAS_GETADDRINFO=1 -DHAS_GETHOSTBYADDR_R=1 -DHAS_GETHOSTBYNAME_R=1 -DHAS_GETNAMEINFO=1 -DHAS_INET_NTOP=1 -DHAS_INET_PTON=1 -DHAS_MSGHDR_FLAGS=1 -DHAS_POLL=1 -DHAS_SOCKLEN_T=1 -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include  -g   -Wno-error -o CMakeFiles/enet.dir/enet/peer.c.o   -c /home/serserar/projects/cpp/undeadhunter/src/third_party/enet/peer.c",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/peer.c"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build/third_party",
+  "command": "/usr/bin/cc -DHAS_FCNTL=1 -DHAS_GETADDRINFO=1 -DHAS_GETHOSTBYADDR_R=1 -DHAS_GETHOSTBYNAME_R=1 -DHAS_GETNAMEINFO=1 -DHAS_INET_NTOP=1 -DHAS_INET_PTON=1 -DHAS_MSGHDR_FLAGS=1 -DHAS_POLL=1 -DHAS_SOCKLEN_T=1 -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include  -g   -Wno-error -o CMakeFiles/enet.dir/enet/protocol.c.o   -c /home/serserar/projects/cpp/undeadhunter/src/third_party/enet/protocol.c",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/protocol.c"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build/third_party",
+  "command": "/usr/bin/cc -DHAS_FCNTL=1 -DHAS_GETADDRINFO=1 -DHAS_GETHOSTBYADDR_R=1 -DHAS_GETHOSTBYNAME_R=1 -DHAS_GETNAMEINFO=1 -DHAS_INET_NTOP=1 -DHAS_INET_PTON=1 -DHAS_MSGHDR_FLAGS=1 -DHAS_POLL=1 -DHAS_SOCKLEN_T=1 -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include  -g   -Wno-error -o CMakeFiles/enet.dir/enet/unix.c.o   -c /home/serserar/projects/cpp/undeadhunter/src/third_party/enet/unix.c",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/unix.c"
+},
+{
+  "directory": "/home/serserar/projects/cpp/undeadhunter/src/build/third_party",
+  "command": "/usr/bin/cc -DHAS_FCNTL=1 -DHAS_GETADDRINFO=1 -DHAS_GETHOSTBYADDR_R=1 -DHAS_GETHOSTBYNAME_R=1 -DHAS_GETNAMEINFO=1 -DHAS_INET_NTOP=1 -DHAS_INET_PTON=1 -DHAS_MSGHDR_FLAGS=1 -DHAS_POLL=1 -DHAS_SOCKLEN_T=1 -I/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/include  -g   -Wno-error -o CMakeFiles/enet.dir/enet/win32.c.o   -c /home/serserar/projects/cpp/undeadhunter/src/third_party/enet/win32.c",
+  "file": "/home/serserar/projects/cpp/undeadhunter/src/third_party/enet/win32.c"
+}
+]
