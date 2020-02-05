@@ -571,7 +571,7 @@ namespace game
 
         syncplayer();
 
-        showscores(true);
+        showscores(false);
         disablezoom();
         lasthit = 0;
 
