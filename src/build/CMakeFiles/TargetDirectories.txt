@@ -1,8 +1,0 @@
-/home/serserar/projects/cpp/undeadhunter/src/build/CMakeFiles/edit_cache.dir
-/home/serserar/projects/cpp/undeadhunter/src/build/CMakeFiles/rebuild_cache.dir
-/home/serserar/projects/cpp/undeadhunter/src/build/CMakeFiles/uh_master.dir
-/home/serserar/projects/cpp/undeadhunter/src/build/CMakeFiles/undeadhunter.dir
-/home/serserar/projects/cpp/undeadhunter/src/build/CMakeFiles/uh_server.dir
-/home/serserar/projects/cpp/undeadhunter/src/build/third_party/CMakeFiles/edit_cache.dir
-/home/serserar/projects/cpp/undeadhunter/src/build/third_party/CMakeFiles/enet.dir
-/home/serserar/projects/cpp/undeadhunter/src/build/third_party/CMakeFiles/rebuild_cache.dir
