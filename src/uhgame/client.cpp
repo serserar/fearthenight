@@ -1525,6 +1525,7 @@ namespace game
                 }
                 s->respawn();
                 parsestate(s, p);
+                s->spawnstate(gamemode);
                 s->state = CS_ALIVE;
                 if(cmode) cmode->pickspawn(s);
                 else findplayerspawn(s, -1, m_teammode ? s->team : 0);

@@ -307,7 +307,6 @@ struct gamestate
         gunselect = GUN_RAIL;
         gunwait = 0;
         loopi(NUMGUNS) ammo[i] = 0;
-        spawnstate(this->gamemode);
     }
 
     void spawnstate(int gamemode)
