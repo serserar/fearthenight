@@ -310,11 +310,17 @@ namespace game
         gameent *f = (gameent *)d;
 
         f->lastpain = lastmillis;
-        if(at->type==ENT_PLAYER && !isteam(at->team, f->team)) at->totaldamage += damage;
+        if(at->type==ENT_PLAYER && !isteam(at->team, f->team)) {
+            at->totaldamage += damage;
+        }
 
-        if(!m_mp(gamemode) || f==at) f->hitpush(damage, vel, at, atk);
-
-        if(!m_mp(gamemode)) damaged(damage, f, at);
+        if(!m_mp(gamemode) || f==at){
+            f->hitpush(damage, vel, at, atk);
+        }
+        
+        if(!m_mp(gamemode)) {
+            damaged(damage, f, at);
+        }
         else
         {
             hitmsg &h = hits.add();

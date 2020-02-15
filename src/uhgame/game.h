@@ -289,8 +289,8 @@ struct gamestate
     int gunselect, gunwait;
     int ammo[NUMGUNS];
     int aitype, skill;
-
-    gamestate() : maxhealth(1), aitype(AI_NONE), skill(0) {}
+    int gamemode;
+    gamestate() : maxhealth(1), aitype(AI_NONE), skill(0), gamemode(0) {}
 
     bool canpickup(int type)
     {
@@ -307,10 +307,13 @@ struct gamestate
         gunselect = GUN_RAIL;
         gunwait = 0;
         loopi(NUMGUNS) ammo[i] = 0;
+        spawnstate(this->gamemode);
     }
 
     void spawnstate(int gamemode)
     {
+        this->gamemode = gamemode;
+        
         if(m_rail)
         {
             gunselect = GUN_RAIL;
@@ -407,6 +410,11 @@ struct gameent : dynent, gamestate
         lastnode = -1;
     }
 
+    int respawnwait(int secs, int delay = 0)
+    {
+        return max(0, secs - (::lastmillis - lastpain - delay)/1000);
+    }
+
     void startgame()
     {
         frags = flags = deaths = 0;
@@ -479,7 +487,7 @@ namespace game
         virtual void respawned(gameent *d) {}
         virtual void setup() {}
         virtual void checkitems(gameent *d) {}
-        virtual int respawnwait(gameent *d) { return 0; }
+        virtual int respawnwait(gameent *d, int delay = 0) { return 0; }
         virtual void pickspawn(gameent *d) { findplayerspawn(d, -1, m_teammode ? d->team : 0); }
         virtual void senditems(packetbuf &p) {}
         virtual void removeplayer(gameent *d) {}

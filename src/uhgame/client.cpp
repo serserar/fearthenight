@@ -1102,7 +1102,7 @@ namespace game
     }
 
     void c2sinfo(bool force) // send update to the server
-    {
+    {//client to server info
         static int lastupdate = -1000;
         if(totalmillis - lastupdate < 40 && !force) return; // don't update faster than 30fps
         lastupdate = totalmillis;

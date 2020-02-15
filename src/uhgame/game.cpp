@@ -534,6 +534,7 @@ namespace game
 
     void initclient()
     {
+        //gamemode = 1;
         player1 = spawnstate(new gameent);
         filtertext(player1->name, "unnamed", false, false, MAXNAMELEN);
         players.add(player1);
@@ -583,8 +584,12 @@ namespace game
         ai::savewaypoints();
         ai::clearwaypoints(true);
 
-        if(!m_mp(gamemode)) spawnplayer(player1);
-        else findplayerspawn(player1, -1, m_teammode ? player1->team : 0);
+        if(!m_mp(gamemode)){ 
+            spawnplayer(player1);
+        }
+        else{
+            findplayerspawn(player1, -1, m_teammode ? player1->team : 0);
+        }
         entities::resetspawns();
         copystring(clientmap, name ? name : "");
 

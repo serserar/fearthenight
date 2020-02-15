@@ -213,7 +213,7 @@ void localservertoclient(int chan, ENetPacket *packet)   // processes any update
 void clientkeepalive() { if(clienthost) enet_host_service(clienthost, NULL, 0); }
 
 void gets2c()           // get updates from the server
-{
+{//get server to client
     ENetEvent event;
     if(!clienthost) return;
     if(connpeer && totalmillis/3000 > connmillis/3000)
