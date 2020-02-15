@@ -289,8 +289,8 @@ struct gamestate
     int gunselect, gunwait;
     int ammo[NUMGUNS];
     int aitype, skill;
-    int gamemode;
-    gamestate() : maxhealth(1), aitype(AI_NONE), skill(0), gamemode(0) {}
+
+    gamestate() : maxhealth(1), aitype(AI_NONE), skill(0) {}
 
     bool canpickup(int type)
     {
@@ -311,7 +311,6 @@ struct gamestate
 
     void spawnstate(int gamemode)
     {
-        this->gamemode = gamemode;
         
         if(m_rail)
         {
