@@ -1537,7 +1537,7 @@ namespace game
                 if(cmode) cmode->respawned(s);
                 ai::spawned(s);
                 checkfollow();
-                addmsg(N_SPAWN, "rcii", s, s->lifesequence, s->gunselect);
+                addmsg(N_SPAWN, "rcii", s, s->lifesequence, s->gunselect );
                 break;
             }
 

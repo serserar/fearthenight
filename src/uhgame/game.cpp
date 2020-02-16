@@ -202,7 +202,7 @@ namespace game
             if(d->state==CS_DEAD && d->ragdoll) moveragdoll(d);
             else if(!intermission)
             {
-                if(lastmillis - d->lastaction >= d->gunwait) d->gunwait = 0;
+                if(lastmillis - d->lastaction >= d->gunwait ) d->gunwait = 0;
             }
 
             const int lagtime = totalmillis-d->lastupdate;
@@ -836,7 +836,7 @@ namespace game
             else if(d->health<=50) { r = 1.0f; g = 0.5f; b = 0; }
         }
 #endif
-        if(d->gunwait) col.mul(0.5f);
+        if(d->gunwait ) col.mul(0.5f);
         return crosshair;
     }
 

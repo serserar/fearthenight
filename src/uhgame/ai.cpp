@@ -1009,7 +1009,12 @@ namespace ai
         }
         if(enemyok)
         {
-            int atk = guns[d->gunselect].attacks[ACT_SHOOT];
+            int atk;
+            if(d->gameclass == 0){
+                
+            }
+            //int atk = guns[d->gunselect].attacks[ACT_SHOOT];
+            atk = guns[d->gunselect].attacks[ACT_MELEE];
             vec ep = getaimpos(d, atk, e);
             float yaw, pitch;
             getyawpitch(dp, ep, yaw, pitch);
@@ -1117,7 +1122,7 @@ namespace ai
     bool request(gameent *d, aistate &b)
     {
         gameent *e = getclient(d->ai->enemy);
-        if(!d->hasammo(d->gunselect) || !hasrange(d, e, d->gunselect) || (d->gunselect != d->ai->weappref && (!isgoodammo(d->gunselect) || d->hasammo(d->ai->weappref))))
+        if(!d->hasammo(d->gunselect ) || !hasrange(d, e, d->gunselect ) || (d->gunselect != d->ai->weappref && (!isgoodammo(d->gunselect ) || d->hasammo(d->ai->weappref))))
         {
             static const int gunprefs[] = { GUN_PULSE, GUN_RAIL };
             int gun = -1;
@@ -1130,7 +1135,7 @@ namespace ai
                     break;
                 }
             }
-            if(gun >= 0 && gun != d->gunselect) gunselect(gun, d);
+            if(gun >= 0 && gun != d->gunselect ) gunselect(gun, d);
         }
         return process(d, b) >= 2;
     }

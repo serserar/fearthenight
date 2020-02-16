@@ -140,7 +140,7 @@ namespace server
         void reset()
         {
             if(state!=CS_SPECTATOR) state = editstate = CS_DEAD;
-            maxhealth = 1;
+            maxhealth = 100;
             projs.reset();
 
             timeplayed = 0;
@@ -3558,10 +3558,10 @@ namespace server
         }
     }
 
-    int laninfoport() { return TESSERACT_LANINFO_PORT; }
-    int serverport() { return TESSERACT_SERVER_PORT; }
+    int laninfoport() { return UNDEADHUNTER_LANINFO_PORT; }
+    int serverport() { return UNDEADHUNTER_SERVER_PORT; }
     const char *defaultmaster() { return "master.tesseract.gg"; }
-    int masterport() { return TESSERACT_MASTER_PORT; }
+    int masterport() { return UNDEADHUNTER_MASTER_PORT; }
     int numchannels() { return 3; }
 
     #include "extinfo.h"

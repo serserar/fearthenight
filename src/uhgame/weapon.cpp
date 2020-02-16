@@ -19,11 +19,11 @@ namespace game
     VARP(maxgibs, 0, 4, 100);
 #endif
 
-    ICOMMAND(getweapon, "", (), intret(player1->gunselect));
+    ICOMMAND(getweapon, "", (), intret(player1->gunselect ));
 
     void gunselect(int gun, gameent *d)
     {
-        if(gun!=d->gunselect)
+        if(gun!=d->gunselect )
         {
             addmsg(N_GUNSELECT, "rci", d, gun);
             playsound(S_WEAPLOAD, d == player1 ? NULL : &d->o);
@@ -41,7 +41,7 @@ namespace game
             gun = (gun + dir)%NUMGUNS;
             if(force || player1->ammo[gun]) break;
         }
-        if(gun != player1->gunselect) gunselect(gun, player1);
+        if(gun != player1->gunselect ) gunselect(gun, player1);
         else playsound(S_NOAMMO);
     }
     ICOMMAND(nextweapon, "ii", (int *dir, int *force), nextweapon(*dir, *force!=0));
@@ -70,7 +70,7 @@ namespace game
     {
         if(numguns<=0 || player1->state!=CS_ALIVE) return;
         int offset = 0;
-        loopi(numguns) if(guns[i] == player1->gunselect) { offset = i+1; break; }
+        loopi(numguns) if(guns[i] == player1->gunselect ) { offset = i+1; break; }
         loopi(numguns)
         {
             int gun = guns[(i+offset)%numguns];
@@ -552,7 +552,7 @@ namespace game
     {
         if(owner->type!=ENT_PLAYER) return;
         gameent *pl = (gameent *)owner;
-        if(pl->muzzle.x < 0 || pl->lastattack < 0 || attacks[pl->lastattack].gun != pl->gunselect) return;
+        if(pl->muzzle.x < 0 || pl->lastattack < 0 || attacks[pl->lastattack].gun != pl->gunselect ) return;
         float dist = o.dist(d);
         o = pl->muzzle;
         if(dist <= 0) d = o;
@@ -568,7 +568,7 @@ namespace game
     {
         if(owner->type!=ENT_PLAYER) return;
         gameent *pl = (gameent *)owner;
-        if(pl->muzzle.x < 0 || pl->lastattack < 0 || attacks[pl->lastattack].gun != pl->gunselect) return;
+        if(pl->muzzle.x < 0 || pl->lastattack < 0 || attacks[pl->lastattack].gun != pl->gunselect ) return;
         o = pl->muzzle;
         hud = owner == hudplayer() ? vec(pl->o).add(vec(0, 0, 2)) : pl->muzzle;
     }
@@ -650,7 +650,7 @@ namespace game
     {
        
         int prevaction = d->lastaction, attacktime = lastmillis-prevaction;
-        if(attacktime<d->gunwait) return;
+        if(attacktime<d->gunwait ) return;
         d->gunwait = 0;
         if(!d->attacking) return;
         
