@@ -668,6 +668,7 @@ namespace game
             }
             return;
         }
+        
         d->ammo[gun] -= attacks[atk].use;
 
         vec from = d->o, to = targ, dir = vec(to).sub(from).safenormalize();
@@ -694,6 +695,11 @@ namespace game
 
         if(d==player1 || d->ai)
         {
+            if(d->clientnum==player1->clientnum)
+            {
+                int realdamage = 0;
+            }
+            //send message shoot to server
             addmsg(N_SHOOT, "rci2i6iv", d, lastmillis-maptime, atk,
                    (int)(from.x*DMF), (int)(from.y*DMF), (int)(from.z*DMF),
                    (int)(to.x*DMF), (int)(to.y*DMF), (int)(to.z*DMF),

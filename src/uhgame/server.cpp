@@ -1808,7 +1808,7 @@ namespace server
             else
             {
                 servstate &gs = ci->state;
-                (ci);
+                spawnstate(ci);
                 putint(p, N_SPAWNSTATE);
                 putint(p, ci->clientnum);
                 sendstate(gs, p);
@@ -2991,6 +2991,7 @@ namespace server
                 cq->state.state = CS_ALIVE;
                 cq->state.gunselect = gunselect;
                 cq->exceeded = 0;
+                //add spawnstate player init
                 if(smode) smode->spawned(cq);
                 QUEUE_AI;
                 QUEUE_BUF({

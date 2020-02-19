@@ -1013,8 +1013,8 @@ namespace ai
             if(d->gameclass == 0){
                 
             }
-            //int atk = guns[d->gunselect].attacks[ACT_SHOOT];
-            atk = guns[d->gunselect].attacks[ACT_MELEE];
+            atk = guns[d->gunselect].attacks[ACT_SHOOT];
+            //atk = guns[d->gunselect].attacks[ACT_MELEE];
             vec ep = getaimpos(d, atk, e);
             float yaw, pitch;
             getyawpitch(dp, ep, yaw, pitch);

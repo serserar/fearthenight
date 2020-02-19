@@ -341,8 +341,15 @@ namespace game
 
     VARP(hitsound, 0, 0, 1);
 
+    /**
+     * damage from actor to d (target)
+     */
     void damaged(int damage, gameent *d, gameent *actor, bool local)
     {
+        if(actor == player1){
+            int rdamage = damage;
+        }
+        
         if((d->state!=CS_ALIVE && d->state != CS_LAGGED && d->state != CS_SPAWNING) || intermission) return;
 
         if(local) damage = d->dodamage(damage);

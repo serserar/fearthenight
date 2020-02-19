@@ -339,6 +339,7 @@ namespace game
 
     void damaged(int damage, gameent *d, gameent *actor, bool local)
     {
+
         if((d->state!=CS_ALIVE && d->state != CS_LAGGED && d->state != CS_SPAWNING) || intermission) return;
 
         if(local) damage = d->dodamage(damage);

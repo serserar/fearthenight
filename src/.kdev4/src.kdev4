@@ -25,7 +25,7 @@ Name=undeadhunter
 Type=Native Application
 
 [Launch][Launch Configuration 0][Data]
-Arguments=\s-m 1 -w640 -h480 -f0
+Arguments=
 Dependencies=@Variant(\x00\x00\x00\t\x00\x00\x00\x00\x00)
 Dependency Action=Nothing
 EnvironmentGroup=

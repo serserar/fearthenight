@@ -274,7 +274,7 @@ namespace game
     {
         vec p = d->o;
         p.z += 0.6f*(d->eyeheight + d->aboveeye) - d->eyeheight;
-        if(blood) particle_splash(PART_BLOOD, max(damage/10, rnd(3)+1), 1000, p, 0x60FFFF, 2.96f);
+        if(blood) particle_splash(PART_BLOOD, max(damage/100, rnd(100)+1), 1000, p, 0x60FFFF, 2.96f);
 #if 0
         if(thirdperson) particle_textcopy(d->abovehead(), tempformatstring("%d", damage), PART_TEXT, 2000, 0xFF4B19, 4.0f, -8);
 #endif
