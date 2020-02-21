@@ -200,3 +200,7 @@ struct dynent : physent                         // animated characters, or chara
 };
 
 
+struct gamehud{
+  int life;
+  int ammo;
+};

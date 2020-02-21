@@ -8,7 +8,8 @@ namespace game
 
     gameent *player1 = NULL;         // our client
     vector<gameent *> players;       // other clients
-
+    gamehud *ghud;
+    
     int following = -1;
 
     VARFP(specmode, 0, 0, 2,
@@ -230,6 +231,7 @@ namespace game
         physicsframe();
         ai::navigate();
         updateweapons(curtime);
+        updateghud();
         otherplayers(curtime);
         ai::update();
         moveragdolls();
@@ -543,6 +545,7 @@ namespace game
     {
         //gamemode = 1;
         player1 = spawnstate(new gameent);
+        ghud = new gamehud;
         filtertext(player1->name, "unnamed", false, false, MAXNAMELEN);
         players.add(player1);
     }
@@ -608,6 +611,11 @@ namespace game
         return showmodeinfo && m_valid(gamemode) ? gamemodes[gamemode - STARTGAMEMODE].info : NULL;
     }
 
+    const gamehud *getgamehud()
+    {
+        return ghud;
+    }
+    
     const char *getscreenshotinfo()
     {
         return server::modename(gamemode, NULL);
@@ -797,6 +805,18 @@ namespace game
         pophudmatrix();
     }
 
+    void updateghud(){
+        if(ghud){
+            if(player1){
+                ghud->ammo = player1->ammo[player1->gunselect];
+                ghud->life = player1->health;
+            }else{
+                ghud->ammo = 0;
+                ghud->life = 0;
+            }
+        }
+    };
+    
     float clipconsole(float w, float h)
     {
         if(cmode) return cmode->clipconsole(w, h);
@@ -907,5 +927,7 @@ namespace game
     }
 
     bool clientoption(const char *arg) { return false; }
+    
+
 }
 

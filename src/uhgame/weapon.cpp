@@ -673,11 +673,21 @@ namespace game
 
         vec from = d->o, to = targ, dir = vec(to).sub(from).safenormalize();
         float dist = to.dist(from);
-        if(!(d->physstate >= PHYS_SLOPE && d->crouching && d->crouched()))
+
+        if(!(d->physstate >= PHYS_SLOPE && d->crouching && d->crouched()) && attacks[atk].kickamount > 0)
         {
-            vec kickback = vec(dir).mul(attacks[atk].kickamount*-2.5f);
+            //add recoil back
+            vec kickback = vec(dir).mul(attacks[atk].kickamount*-0.025f);
             d->vel.add(kickback);
+            //add recoil
+            d->pitch+=attacks[atk].kickamount/50.0;
+            d->yaw+=(rand()%attacks[atk].kickamount)/50.0 - attacks[atk].kickamount/100.0;
+            
+        }else if(attacks[atk].kickamount > 0){
+            d->pitch+=(rand()%attacks[atk].kickamount)/80.0;
+            d->yaw+=(rand()%attacks[atk].kickamount)/80.0 - attacks[atk].kickamount/160.0;
         }
+        
         float shorten = attacks[atk].range && dist > attacks[atk].range ? attacks[atk].range : 0,
               barrier = raycube(d->o, dir, dist, RAY_CLIPMAT|RAY_ALPHAPOLY);
         if(barrier > 0 && barrier < dist && (!shorten || barrier < shorten))
@@ -785,7 +795,7 @@ namespace game
         if(player1->clientnum>=0 && player1->state==CS_ALIVE) shoot(player1, worldpos); // only shoot when connected to server
         updatebouncers(curtime); // need to do this after the player shoots so bouncers don't end up inside player's BB next frame
     }
-
+    
     void avoidweapons(ai::avoidset &obstacles, float radius)
     {
         loopv(projs)

@@ -2712,6 +2712,8 @@ void gl_drawhud()
     float conw = w/conscale, conh = h/conscale, abovehud = conh - FONTH;
     if(!hidehud && !mainmenu)
     {
+        const gamehud* ghud = game::getgamehud();
+        
         if(!hidestats)
         {
             pushhudscale(conscale);
@@ -2734,7 +2736,9 @@ void gl_drawhud()
             }
             
             if(showlife){
-                draw_textf("life %d", conw-5*FONTH - 500, conh-FONTH*3/2, 100);
+                if(ghud){
+                    draw_textf("life %d", conw-5*FONTH - 500, conh-FONTH*3/2, ghud->life);
+                }
             }
 
             printtimers(conw, conh);

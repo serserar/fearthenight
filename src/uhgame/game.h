@@ -524,6 +524,7 @@ namespace game
     extern bool intermission;
     extern int maptime, maprealtime, maplimit;
     extern gameent *player1;
+    extern gamehud *ghud;
     extern vector<gameent *> players, clients;
     extern int lastspawnattempt;
     extern int lasthit;
@@ -603,6 +604,8 @@ namespace game
     extern void weaponswitch(gameent *d);
     extern void avoidweapons(ai::avoidset &obstacles, float radius);
 
+    //game hud
+    extern void updateghud();
     // scoreboard
     extern void showscores(bool on);
     extern void getbestplayers(vector<gameent *> &best);
