@@ -384,7 +384,7 @@ struct gameent : dynent, gamestate
     int smoothmillis;
 
     string name, info;
-    int team, playermodel, playercolor;
+    int team, playermodel, playercolor, playerclass;
     ai::aiinfo *ai;
     int ownernum, lastnode;
 
