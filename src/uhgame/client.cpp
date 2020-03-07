@@ -165,7 +165,9 @@ namespace game
         int num = isdigit(team[0]) ? parseint(team) : teamnumber(team);
         if(!validteam(num)) return;
         if(player1->clientnum < 0) player1->team = num;
-        else addmsg(N_SWITCHTEAM, "ri", num);
+        else {
+            addmsg(N_SWITCHTEAM, "ri", num);
+        }
     }
     void printteam()
     {
@@ -1526,7 +1528,12 @@ namespace game
                 s->respawn();
                 parsestate(s, p);
                 s->spawnstate(gamemode);
-                s->state = CS_ALIVE;
+                if(validteam(s->team)){
+                    s->state = CS_ALIVE;
+                }else{
+                    //s->state = CS_ALIVE;
+                    s->state = CS_SPECTATOR;
+                }    
                 if(cmode) cmode->pickspawn(s);
                 else findplayerspawn(s, -1, m_teammode ? s->team : 0);
                 if(s == player1)

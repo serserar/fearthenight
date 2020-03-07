@@ -3,6 +3,7 @@
 
 #include "shared/cube.h"
 
+#include "gameclass.h"
 // animations
 
 enum
@@ -358,7 +359,7 @@ struct gamestate
 };
 
 #define MAXTEAMS 2
-static const char * const teamnames[1+MAXTEAMS] = { "", "hunter", "undead" };
+static const char * const teamnames[1+MAXTEAMS] = { "none", "hunter", "undead" };
 static const char * const teamtextcode[1+MAXTEAMS] = { "\f0", "\f1", "\f3" };
 static const int teamtextcolor[1+MAXTEAMS] = { 0x1EC850, 0xFF4B19, 0x6496FF };
 static const int teamscoreboardcolor[1+MAXTEAMS] = { 0, 0xC03030, 0x3030C0  };
@@ -384,7 +385,8 @@ struct gameent : dynent, gamestate
     int smoothmillis;
 
     string name, info;
-    int team, playermodel, playercolor, playerclass;
+    int team, playermodel, playercolor;
+    gclass playerclass;
     ai::aiinfo *ai;
     int ownernum, lastnode;
 
@@ -422,6 +424,7 @@ struct gameent : dynent, gamestate
         lastpickupmillis = 0;
         flagpickup = 0;
         lastnode = -1;
+        GameClass::apply_class(*this);
     }
 
     int respawnwait(int secs, int delay = 0)
@@ -436,6 +439,8 @@ struct gameent : dynent, gamestate
         maxhealth = 100;
         lifesequence = -1;
         respawned = suicided = -2;
+        state = CS_SPECTATOR;//init player as spectator without team
+        team = -1;
     }
 };
 

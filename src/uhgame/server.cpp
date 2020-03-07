@@ -1103,7 +1103,7 @@ namespace server
     }
 
     void enddemoplayback()
-    {
+        {
         if(!demoplayback) return;
         DELETEP(demoplayback);
 
@@ -2732,8 +2732,9 @@ namespace server
         if(mastermode>=MM_LOCKED) ci->state.state = CS_SPECTATOR;
         ci->state.lasttimeplayed = lastmillis;
 
-        ci->team = m_teammode ? chooseworstteam(ci) : 0;
-
+        //ci->team =     ? chooseworstteam(ci) : 0;
+        ci->state.state = CS_SPECTATOR;
+        ci->team = 0;
         sendwelcome(ci);
         if(restorescore(ci)) sendresume(ci);
         sendinitclient(ci);
@@ -3121,6 +3122,7 @@ namespace server
             case N_SWITCHTEAM:
             {
                 int team = getint(p);
+                
                 if(m_teammode && validteam(team) && ci->team != team && (!smode || smode->canchangeteam(ci, ci->team, team)))
                 {
                     if(ci->state.state==CS_ALIVE) suicide(ci);

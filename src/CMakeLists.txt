@@ -87,6 +87,7 @@ if(BUILD_CLIENT)
       uhgame/server.cpp
       uhgame/waypoint.cpp
       uhgame/weapon.cpp
+      uhgame/gameclass.cpp
     )
   set(CLIENT_INCLUDES
       ${CMAKE_CURRENT_SOURCE_DIR}
