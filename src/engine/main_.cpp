@@ -726,7 +726,7 @@ static void setupscreen()
     SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 0);
     SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 0);
     screen = SDL_CreateWindow(
-        "Tesseract",
+        "UndeadHunter",
         winx,
         winy,
         winw,
@@ -1009,7 +1009,7 @@ static void stackdumper(unsigned int type, EXCEPTION_POINTERS *ep)
     CONTEXT *context = ep->ContextRecord;
     char out[512];
     formatstring(out,
-                 "Tesseract Win32 Exception: 0x%x [0x%x]\n\n",
+                 "UndeadHunter Win32 Exception: 0x%x [0x%x]\n\n",
                  er->ExceptionCode,
                  er->ExceptionCode == EXCEPTION_ACCESS_VIOLATION ? er->ExceptionInformation[1] : -1);
     SymInitialize(GetCurrentProcess(), NULL, TRUE);
@@ -1105,7 +1105,7 @@ void fatal(const char *s, ...)  // failure exit
 #endif
             }
             SDL_Quit();
-            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Tesseract fatal error", msg, NULL);
+            SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "UndeadHunter fatal error", msg, NULL);
         }
     }
 
@@ -1683,7 +1683,7 @@ int main(int argc, char **argv)
 #if defined(APPLE)
 void _main()
 {
-    char *argv[2] = {"tesseract", NULL};
+    char *argv[2] = {"undeadhunter", NULL};
     int argc = 1;
     main(argc, argv);
 }
