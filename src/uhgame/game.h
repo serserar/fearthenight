@@ -2,43 +2,12 @@
 #define __GAME_H__
 
 #include "shared/cube.h"
-
+#include "game_config.h"
+#include "game_anim.h"
+#include "game_sound.h"
+#include "game_weapon.h"
 #include "gameclass.h"
-// animations
 
-enum
-{
-    ANIM_DEAD = ANIM_GAMESPECIFIC, ANIM_DYING,
-    ANIM_IDLE, ANIM_RUN_N, ANIM_RUN_NE, ANIM_RUN_E, ANIM_RUN_SE, ANIM_RUN_S, ANIM_RUN_SW, ANIM_RUN_W, ANIM_RUN_NW,
-    ANIM_JUMP, ANIM_JUMP_N, ANIM_JUMP_NE, ANIM_JUMP_E, ANIM_JUMP_SE, ANIM_JUMP_S, ANIM_JUMP_SW, ANIM_JUMP_W, ANIM_JUMP_NW,
-    ANIM_SINK, ANIM_SWIM,
-    ANIM_CROUCH, ANIM_CROUCH_N, ANIM_CROUCH_NE, ANIM_CROUCH_E, ANIM_CROUCH_SE, ANIM_CROUCH_S, ANIM_CROUCH_SW, ANIM_CROUCH_W, ANIM_CROUCH_NW,
-    ANIM_CROUCH_JUMP, ANIM_CROUCH_JUMP_N, ANIM_CROUCH_JUMP_NE, ANIM_CROUCH_JUMP_E, ANIM_CROUCH_JUMP_SE, ANIM_CROUCH_JUMP_S, ANIM_CROUCH_JUMP_SW, ANIM_CROUCH_JUMP_W, ANIM_CROUCH_JUMP_NW,
-    ANIM_CROUCH_SINK, ANIM_CROUCH_SWIM,
-    ANIM_SHOOT, ANIM_MELEE,
-    ANIM_PAIN,
-    ANIM_EDIT, ANIM_LAG, ANIM_TAUNT, ANIM_WIN, ANIM_LOSE,
-    ANIM_GUN_IDLE, ANIM_GUN_SHOOT, ANIM_GUN_MELEE,
-    ANIM_VWEP_IDLE, ANIM_VWEP_SHOOT, ANIM_VWEP_MELEE,
-    NUMANIMS
-};
-
-static const char * const animnames[] =
-{
-    "mapmodel",
-    "dead", "dying",
-    "idle", "run N", "run NE", "run E", "run SE", "run S", "run SW", "run W", "run NW",
-    "jump", "jump N", "jump NE", "jump E", "jump SE", "jump S", "jump SW", "jump W", "jump NW",
-    "sink", "swim",
-    "crouch", "crouch N", "crouch NE", "crouch E", "crouch SE", "crouch S", "crouch SW", "crouch W", "crouch NW",
-    "crouch jump", "crouch jump N", "crouch jump NE", "crouch jump E", "crouch jump SE", "crouch jump S", "crouch jump SW", "crouch jump W", "crouch jump NW",
-    "crouch sink", "crouch swim",
-    "shoot", "melee",
-    "pain",
-    "edit", "lag", "taunt", "win", "lose",
-    "gun idle", "gun shoot", "gun melee",
-    "vwep idle", "vwep shoot", "vwep melee"
-};
 
 // console message types
 
@@ -82,13 +51,7 @@ struct gameentity : extentity
 {
 };
 
-enum { GUN_RAIL = 0, GUN_PULSE, GUN_MG , GUN_SHOTGUN, GUN_FIST, GUN_CLAW, NUMGUNS };
-enum { ACT_IDLE = 0, ACT_SHOOT, ACT_MELEE, NUMACTS };
-enum { ATK_RAIL_SHOOT = 0, ATK_RAIL_MELEE, ATK_PULSE_SHOOT, ATK_PULSE_MELEE, ATK_MG_SHOOT, ATK_MG_MELEE,ATK_SHOTGUN_SHOOT, ATK_SHOTGUN_MELEE, ATK_FIST_MELEE, ATK_CLAW_MELEE, NUMATKS };
 
-#define validgun(n) ((n) >= 0 && (n) < NUMGUNS)
-#define validact(n) ((n) >= 0 && (n) < NUMACTS)
-#define validatk(n) ((n) >= 0 && (n) < NUMATKS)
 
 enum
 {
@@ -147,24 +110,6 @@ enum { MM_AUTH = -1, MM_OPEN = 0, MM_VETO, MM_LOCKED, MM_PRIVATE, MM_PASSWORD, M
 static const char * const mastermodenames[] =  { "auth",   "open",   "veto",       "locked",     "private",    "password" };
 static const char * const mastermodecolors[] = { "",       "\f0",    "\f2",        "\f2",        "\f3",        "\f3" };
 static const char * const mastermodeicons[] =  { "server", "server", "serverlock", "serverlock", "serverpriv", "serverpriv" };
-
-// hardcoded sounds, defined in sounds.cfg
-enum
-{
-    S_JUMP = 0, S_LAND,
-    S_SPLASHIN, S_SPLASHOUT, S_BURN,
-    S_ITEMSPAWN, S_TELEPORT, S_JUMPPAD,
-    S_MELEE, S_PULSE1, S_PULSE2, S_PULSEEXPLODE, S_RAIL1, S_RAIL2,
-    S_WEAPLOAD, S_NOAMMO, S_HIT,
-    S_PAIN1, S_PAIN2, S_DIE1, S_DIE2,
-
-    S_FLAGPICKUP,
-    S_FLAGDROP,
-    S_FLAGRETURN,
-    S_FLAGSCORE,
-    S_FLAGRESET,
-    S_FLAGFAIL
-};
 
 // network messages codes, c2s, c2c, s2c
 
@@ -226,19 +171,6 @@ static const int msgsizes[] =               // size inclusive message token, 0 f
     -1
 };
 
-#define UNDEADHUNTER_SERVER_PORT 46668//42000
-#define UNDEADHUNTER_LANINFO_PORT 46667//41998
-#define UNDEADHUNTER_MASTER_PORT 46666//41999
-#define PROTOCOL_VERSION 2              // bump when protocol changes
-#define DEMO_VERSION 1                  // bump when demo format changes
-#define DEMO_MAGIC "UNDEAD_HUNTER_DEMO\0\0"
-
-struct demoheader
-{
-    char magic[16];
-    int version, protocol;
-};
-
 #define MAXNAMELEN 15
 
 enum
@@ -267,30 +199,6 @@ static struct itemstat { int add, max, sound; const char *name; int icon, info; 
 #define EXP_SELFPUSH 2.5f
 #define EXP_DISTSCALE 0.5f
 
-static const struct attackinfo { int gun, action, anim, vwepanim, hudanim, sound, hudsound, attackdelay, damage, spread, margin, projspeed, kickamount, range, rays, hitpush, exprad, ttl, use; } attacks[NUMATKS] =
-{
-    { GUN_RAIL, ACT_SHOOT, ANIM_SHOOT, ANIM_VWEP_SHOOT, ANIM_GUN_SHOOT, S_RAIL1,  S_RAIL2, 1300, 100, 0, 0,    0, 30, 2048, 1, 5000,  0, 0, 0 },
-    { GUN_RAIL,  ACT_MELEE, ANIM_MELEE, ANIM_VWEP_MELEE, ANIM_GUN_MELEE, S_MELEE,  S_MELEE,  500, 50, 0, 2,    0,  0,   14, 1,    0,  0, 0, 0 },
-    { GUN_PULSE, ACT_SHOOT, ANIM_SHOOT, ANIM_VWEP_SHOOT, ANIM_GUN_SHOOT, S_PULSE1, S_PULSE2, 700, 100, 0, 1, 1000, 30, 1024, 1, 5000, 15, 0, 0 },
-    { GUN_PULSE, ACT_MELEE, ANIM_MELEE, ANIM_VWEP_MELEE, ANIM_GUN_MELEE, S_MELEE,  S_MELEE,  500, 50, 0, 2,    0,  0,   14, 1,    0,  0, 0, 0 },
-    { GUN_MG,ACT_SHOOT, ANIM_SHOOT, ANIM_VWEP_SHOOT, ANIM_GUN_SHOOT, S_RAIL1, S_RAIL2, 200, 50, 0, 0,    0, 30, 2048, 1, 5000,  0, 0, 0 },
-    { GUN_MG, ACT_MELEE, ANIM_MELEE, ANIM_VWEP_MELEE, ANIM_GUN_MELEE, S_MELEE,  S_MELEE,  500, 50, 0, 2,    0,  0,   14, 1,    0,  0, 0, 0 },
-    { GUN_SHOTGUN, ACT_SHOOT, ANIM_SHOOT, ANIM_VWEP_SHOOT, ANIM_GUN_SHOOT, S_PULSE1, S_PULSE2, 500, 100, 0, 0,    0, 30, 2048, 1, 5000,  0, 0, 0  },
-    { GUN_SHOTGUN, ACT_MELEE, ANIM_MELEE, ANIM_VWEP_MELEE, ANIM_GUN_MELEE, S_MELEE,  S_MELEE,  500, 50, 0, 2,    0,  0,   14, 1,    0,  0, 0, 0 },
-    { GUN_FIST, ACT_MELEE, ANIM_MELEE, ANIM_VWEP_MELEE, ANIM_GUN_MELEE, S_MELEE,  S_MELEE,  200, 20, 0, 2,    0,  0,   14, 1,    0,  0, 0, 0 },
-    { GUN_CLAW, ACT_MELEE, ANIM_MELEE, ANIM_VWEP_MELEE, ANIM_GUN_MELEE, S_MELEE,  S_MELEE,  200, 100, 0, 2,    0,  0,   30, 1,    0,  0, 0, 0 }
-};
-
-static const struct guninfo { const char *name, *file, *vwep; int attacks[NUMACTS]; } guns[NUMGUNS] =
-{
-    { "railgun", "railgun", "worldgun/railgun", { -1, ATK_RAIL_SHOOT, ATK_RAIL_MELEE }, },
-    { "pulse rifle", "pulserifle", "worldgun/pulserifle", { -1, ATK_PULSE_SHOOT, ATK_PULSE_MELEE } },
-    { "mggun", "railgun", "worldgun/railgun", { -1, ATK_MG_SHOOT, ATK_MG_MELEE }, },
-    { "shotgungun", "railgun", "worldgun/pulserifle", { -1, ATK_SHOTGUN_SHOOT, ATK_SHOTGUN_MELEE }, },
-    { "fist", "fist", "worldgun/pulserifle", { -1, ATK_FIST_MELEE, ATK_FIST_MELEE } },
-    { "claw", "claw", "worldgun/pulserifle", { -1, ATK_CLAW_MELEE, ATK_CLAW_MELEE } }
-};
-
 #include "ai.h"
 
 // inherited by gameent and server clients
@@ -302,9 +210,17 @@ struct gamestate
     int aitype, skill;
     int gameclass;
 
-    gamestate() : maxhealth(100), aitype(AI_NONE), skill(0) {}
+    gamestate() : maxhealth(100), aitype(AI_NONE), skill(0) {
+        this->maxhealth = 100;
+        this->aitype = AI_NONE;
+        this->skill = 0;
+    }
 
-    gamestate(int gameclass) : maxhealth(100), aitype(AI_NONE), skill(0) {}
+    gamestate(int gameclass) : maxhealth(100), aitype(AI_NONE), skill(0) {
+        this->maxhealth = 100;
+        this->aitype = AI_NONE;
+        this->skill = 0;
+    }
     
     bool canpickup(int type)
     {
@@ -321,6 +237,7 @@ struct gamestate
         gunselect = GUN_RAIL;
         gunwait = 0;
         loopi(NUMGUNS) ammo[i] = 0;
+        GameClass::apply_respawn(*this);
     }
 
     void spawnstate(int gamemode)
@@ -343,18 +260,23 @@ struct gamestate
             gunselect = GUN_RAIL;
             loopi(NUMGUNS) ammo[i] = 1;
         }
+        
+        GameClass::apply_respawn(*this);
     }
 
     // just subtract damage here, can set death, etc. later in code calling this
     int dodamage(int damage)
     {
-        health -= damage;
+        damage = GameClass::apply_damage(*this, damage);
         return damage;
     }
 
     int hasammo(int gun, int exclude = -1)
     {
         return validgun(gun) && gun != exclude && ammo[gun] > 0;
+    }
+    void setclass(int team){
+        GameClass::apply_class(*this, team);
     }
 };
 
@@ -424,7 +346,7 @@ struct gameent : dynent, gamestate
         lastpickupmillis = 0;
         flagpickup = 0;
         lastnode = -1;
-        GameClass::apply_class(*this);
+        GameClass::apply_class(*this, team);
     }
 
     int respawnwait(int secs, int delay = 0)
@@ -441,6 +363,11 @@ struct gameent : dynent, gamestate
         respawned = suicided = -2;
         state = CS_SPECTATOR;//init player as spectator without team
         team = -1;
+    }
+
+    void setclass()
+    {
+        GameClass::apply_class(*this, team);
     }
 };
 

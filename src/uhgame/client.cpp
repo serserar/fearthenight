@@ -152,6 +152,7 @@ namespace game
     {
         conoutf("your name is: %s", colorname(player1));
     }
+    
     ICOMMAND(name, "sN", (char *s, int *numargs),
     {
         if(*numargs > 0) switchname(s);
@@ -162,13 +163,17 @@ namespace game
 
     void switchteam(const char *team)
     {
+        //check if is valid team
         int num = isdigit(team[0]) ? parseint(team) : teamnumber(team);
         if(!validteam(num)) return;
-        if(player1->clientnum < 0) player1->team = num;
-        else {
+        if(player1->clientnum < 0) {
+            player1->team = num;
+        }else {
+            //send command to server to switch team
             addmsg(N_SWITCHTEAM, "ri", num);
         }
     }
+    
     void printteam()
     {
         if((player1->clientnum >= 0 && !m_teammode) || !validteam(player1->team)) conoutf("you are not in a team");
@@ -182,7 +187,24 @@ namespace game
     });
     ICOMMAND(getteam, "", (), intret((player1->clientnum < 0 || m_teammode) && validteam(player1->team) ? player1->team : 0));
     ICOMMAND(getteamname, "i", (int *num), result(teamname(*num)));
-
+    
+    ICOMMAND(getgameclass, "i", (int *num), result(GameClass::get_class(*num)));
+    
+    void selectclass(const char* gameclass){
+        
+        
+    }
+    
+    
+    
+    ICOMMAND(selectclass,"sN", (char *s, int *numargs),
+    {
+        if(*numargs > 0) selectclass(s);
+        
+    });
+    
+    
+    
     struct authkey
     {
         char *name, *key, *desc;
@@ -1935,6 +1957,7 @@ namespace game
                 gameent *w = getclient(wn);
                 if(!w) return;
                 w->team = validteam(team) ? team : 0;
+                w->setclass();
                 static const char * const fmt[2] = { "%s switched to team %s", "%s forced to team %s"};
                 if(reason >= 0 && size_t(reason) < sizeof(fmt)/sizeof(fmt[0]))
                     conoutf(fmt[reason], colorname(w), teamnames[w->team]);

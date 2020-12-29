@@ -207,7 +207,7 @@ namespace server
     {
         int clientnum, ownernum, connectmillis, sessionid, overflow;
         string name, mapvote;
-        int team, playermodel, playercolor;
+        int team, playermodel, playercolor, gameclass;
         int modevote;
         int privilege;
         bool connected, local, timesync;
@@ -328,6 +328,7 @@ namespace server
         {
             name[0] = 0;
             team = 0;
+            gameclass = 0;
             playermodel = -1;
             playercolor = 0;
             privilege = PRIV_NONE;
@@ -3127,6 +3128,7 @@ namespace server
                 {
                     if(ci->state.state==CS_ALIVE) suicide(ci);
                     ci->team = team;
+                    ci->state.setclass(team);
                     aiman::changeteam(ci);
                     sendf(-1, 1, "riiii", N_SETTEAM, sender, ci->team, ci->state.state==CS_SPECTATOR ? -1 : 0);
                 }

@@ -1,0 +1,21 @@
+#ifndef __GAME_SOUND_H__
+#define __GAME_SOUND_H__
+// hardcoded sounds, defined in sounds.cfg
+enum
+{
+    S_JUMP = 0, S_LAND,
+    S_SPLASHIN, S_SPLASHOUT, S_BURN,
+    S_ITEMSPAWN, S_TELEPORT, S_JUMPPAD,
+    S_MELEE, S_PULSE1, S_PULSE2, S_PULSEEXPLODE, S_RAIL1, S_RAIL2,
+    S_WEAPLOAD, S_NOAMMO, S_HIT,
+    S_PAIN1, S_PAIN2, S_DIE1, S_DIE2,
+
+    S_FLAGPICKUP,
+    S_FLAGDROP,
+    S_FLAGRETURN,
+    S_FLAGSCORE,
+    S_FLAGRESET,
+    S_FLAGFAIL
+};
+
+#endif
