@@ -928,6 +928,7 @@ namespace server
             clientinfo *ci = team[i][j];
             if(ci->team == 1+i) continue;
             ci->team = 1+i;
+            ci->state.setclass(ci->team);
             sendf(-1, 1, "riiii", N_SETTEAM, ci->clientnum, ci->team, -1);
         }
     }
@@ -3284,6 +3285,7 @@ namespace server
                 {
                     if(wi->state.state==CS_ALIVE) suicide(wi);
                     wi->team = team;
+                    wi->state.setclass(team);
                 }
                 aiman::changeteam(wi);
                 sendf(-1, 1, "riiii", N_SETTEAM, who, wi->team, 1);

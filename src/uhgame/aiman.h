@@ -118,6 +118,7 @@ namespace aiman
         copystring(ci->name, "bot", MAXNAMELEN+1);
         ci->state.state = CS_DEAD;
         ci->team = team;
+        ci->state.setclass(team);//set bot class
         ci->playermodel = rnd(128);
         ci->playercolor = rnd(0x8000);
         ci->aireinit = 2;
