@@ -120,8 +120,9 @@ if(BUILD_SERVER)
       engine/command.cpp
       engine/server.cpp
       engine/worldio.cpp
-      game/entities.cpp
-      game/server.cpp
+      uhgame/entities.cpp
+      uhgame/gameclass.cpp
+      uhgame/server.cpp
       )
   set(SERVER_INCLUDES
       ${CMAKE_CURRENT_SOURCE_DIR}

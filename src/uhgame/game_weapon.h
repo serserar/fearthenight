@@ -23,7 +23,7 @@ static const struct attackinfo { int gun, action, anim, vwepanim, hudanim, sound
     { GUN_SHOTGUN, ACT_SHOOT, ANIM_SHOOT, ANIM_VWEP_SHOOT, ANIM_GUN_SHOOT, S_PULSE1, S_PULSE2, 500, 100, 0, 0,    0, 30, 2048, 1, 5000,  0, 0, 0  },
     { GUN_SHOTGUN, ACT_MELEE, ANIM_MELEE, ANIM_VWEP_MELEE, ANIM_GUN_MELEE, S_MELEE,  S_MELEE,  500, 50, 0, 2,    0,  0,   14, 1,    0,  0, 0, 0 },
     { GUN_FIST, ACT_MELEE, ANIM_MELEE, ANIM_VWEP_MELEE, ANIM_GUN_MELEE, S_MELEE,  S_MELEE,  200, 20, 0, 2,    0,  0,   14, 1,    0,  0, 0, 0 },
-    { GUN_CLAW, ACT_MELEE, ANIM_MELEE, ANIM_VWEP_MELEE, ANIM_GUN_MELEE, S_MELEE,  S_MELEE,  200, 100, 0, 2,    0,  0,   30, 1,    0,  0, 0, 0 }
+    { GUN_CLAW, ACT_MELEE, ANIM_MELEE, ANIM_VWEP_MELEE, ANIM_GUN_MELEE, S_MELEE,  S_MELEE,  100, 90, 0, 2,    0,  0,   25, 1,    0,  0, 0, 0 }
 };
 
 static const struct guninfo { const char *name, *file, *vwep; int attacks[NUMACTS]; } guns[NUMGUNS] =
@@ -33,7 +33,7 @@ static const struct guninfo { const char *name, *file, *vwep; int attacks[NUMACT
     { "mggun", "railgun", "worldgun/railgun", { -1, ATK_MG_SHOOT, ATK_MG_MELEE }, },
     { "shotgungun", "railgun", "worldgun/pulserifle", { -1, ATK_SHOTGUN_SHOOT, ATK_SHOTGUN_MELEE }, },
     { "fist", "fist", "worldgun/pulserifle", { -1, ATK_FIST_MELEE, ATK_FIST_MELEE } },
-    { "claw", "claw", "worldgun/pulserifle", { -1, ATK_CLAW_MELEE, ATK_CLAW_MELEE } }
+    { "claw", "claw", NULL, { -1, ATK_CLAW_MELEE, ATK_CLAW_MELEE } }
 };
 
 #endif

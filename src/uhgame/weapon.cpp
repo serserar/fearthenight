@@ -61,8 +61,14 @@ namespace game
     {
         int gun = getweapon(name);
         if(player1->state!=CS_ALIVE || !validgun(gun)) return;
-        if(force || player1->ammo[gun]) gunselect(gun, player1);
-        else playsound(S_NOAMMO);
+        if (force || player1->ammo[gun])
+        {
+            gunselect(gun, player1);
+        }
+        else
+        {
+            playsound(S_NOAMMO);
+        }
     }
     ICOMMAND(setweapon, "si", (char *name, int *force), setweapon(name, *force!=0));
 
