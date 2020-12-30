@@ -428,8 +428,8 @@ const float STAIRHEIGHT = 4.1f;
 const float FLOORZ = 0.867f;
 const float SLOPEZ = 0.5f;
 const float WALLZ = 0.2f;
-extern const float JUMPVEL = 125.0f;
-extern const float GRAVITY = 200.0f;
+//extern const float JUMPVEL = 125.0f;
+//extern const float GRAVITY = 200.0f;
 
 bool ellipseboxcollide(physent *d, const vec &dir, const vec &o, const vec &center, float yaw, float xr, float yr, float hi, float lo)
 {
@@ -1558,10 +1558,10 @@ bool bounce(physent *d, float secs, float elasticity, float waterfric, float gra
     bool water = isliquid(mat);
     if(water)
     {
-        d->vel.z -= grav*GRAVITY/16*secs;
+        d->vel.z -= grav*d->gravity/16*secs;
         d->vel.mul(max(1.0f - secs/waterfric, 0.0f));
     }
-    else d->vel.z -= grav*GRAVITY*secs;
+    else d->vel.z -= grav*d->gravity*secs;
     vec old(d->o);
     loopi(2)
     {
@@ -1745,7 +1745,7 @@ void modifyvelocity(physent *pl, bool local, bool water, bool floating, int curt
         if(pl->jumping && allowmove)
         {
             pl->jumping = false;
-            pl->vel.z = max(pl->vel.z, JUMPVEL);
+            pl->vel.z = max(pl->vel.z, pl->jumpspeed);
         }
     }
     else if(pl->physstate >= PHYS_SLOPE || water)
@@ -1755,7 +1755,7 @@ void modifyvelocity(physent *pl, bool local, bool water, bool floating, int curt
         {
             pl->jumping = false;
 
-            pl->vel.z = max(pl->vel.z, JUMPVEL); // physics impulse upwards
+            pl->vel.z = max(pl->vel.z, pl->jumpspeed); // physics impulse upwards
             if(water) { pl->vel.x /= 8.0f; pl->vel.y /= 8.0f; } // dampen velocity change even harder, gives correct water feel
 
             game::physicstrigger(pl, local, 1, 0);
@@ -1802,13 +1802,13 @@ void modifygravity(physent *pl, bool water, int curtime)
 {
     float secs = curtime/1000.0f;
     vec g(0, 0, 0);
-    if(pl->physstate == PHYS_FALL) g.z -= GRAVITY*secs;
+    if(pl->physstate == PHYS_FALL) g.z -= pl->gravity*secs;
     else if(pl->floor.z > 0 && pl->floor.z < FLOORZ)
     {
         g.z = -1;
         g.project(pl->floor);
         g.normalize();
-        g.mul(GRAVITY*secs);
+        g.mul(pl->gravity*secs);
     }
     if(!water || !game::allowmove(pl) || (!pl->move && !pl->strafe)) pl->falling.add(g);
 

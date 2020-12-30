@@ -17,6 +17,27 @@
 #include "gameclass.h"
 #include "game.h"
 
+void GameClass::apply_class(gameent &ent, int team)
+{
+    switch (team)
+    {
+        case 1:
+            ent.gameclass = HUNTER;
+            ent.health = 100;
+            ent.maxhealth = 100;
+            ent.maxspeed = 100;
+            break;
+        case 2:
+            ent.gameclass = UNDEAD_VAMPIRE;
+            ent.health = 100;
+            ent.maxhealth = 100;
+            ent.maxspeed = 120; 
+            ent.jumpspeed = 150.f;
+            ent.gravity = 100.f;
+            break;
+    };
+}
+
 void GameClass::apply_class(gamestate &state, int team)
 {
     switch (team)

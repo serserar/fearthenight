@@ -39,6 +39,7 @@ public:
      */
     GameClass ()= delete;
     
+    static void apply_class(gameent& ent, int team);
     static void apply_class(gamestate& state, int team);
     static void apply_weapons(gamestate& state, int gamemode);
     static void apply_respawn(gamestate& state);
