@@ -284,14 +284,18 @@ struct gameent : dynent, gamestate
         return max(0, secs - (::lastmillis - lastpain - delay)/1000);
     }
 
-    void startgame()
+    void startgame(int gamemode)
     {
         frags = flags = deaths = 0;
         totaldamage = totalshots = 0;
         maxhealth = 100;
         lifesequence = -1;
         respawned = suicided = -2;
-        state = CS_SPECTATOR;//init player as spectator without team
+        if(m_edit){
+            state = CS_EDITING;//init player as editing mode
+        }else{
+            state = CS_SPECTATOR;//init player as spectator without team
+        }
         team = -1;
     }
 

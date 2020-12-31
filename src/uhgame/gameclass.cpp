@@ -17,6 +17,13 @@
 #include "gameclass.h"
 #include "game.h"
 
+/**
+ * @brief Apply class values life, speed, jumpspeed, gravity depends the 
+ * selected team.
+ * 
+ * @param ent current gameent
+ * @param team int with the team
+ */
 void GameClass::apply_class(gameent &ent, int team)
 {
     switch (team)
@@ -26,13 +33,15 @@ void GameClass::apply_class(gameent &ent, int team)
             ent.health = 100;
             ent.maxhealth = 100;
             ent.maxspeed = 100;
+            ent.jumpspeed = 125.f;
+            ent.gravity = 200.f;
             break;
         case 2:
             ent.gameclass = UNDEAD_VAMPIRE;
-            ent.health = 100;
-            ent.maxhealth = 100;
+            ent.health = 120;
+            ent.maxhealth = 120;
             ent.maxspeed = 120; 
-            ent.jumpspeed = 150.f;
+            ent.jumpspeed = 250.f;
             ent.gravity = 100.f;
             break;
     };
@@ -49,12 +58,18 @@ void GameClass::apply_class(gamestate &state, int team)
             break;
         case 2:
             state.gameclass = UNDEAD_VAMPIRE;
-            state.health = 100;
-            state.maxhealth = 100;
+            state.health = 120;
+            state.maxhealth = 120;
             break;
     };
 }
 
+/**
+ * @brief 
+ * Apply weapons to player class
+ * @param state current gamestate (player or bot)
+ * @param gamemode current gamemode
+ */
 void GameClass::apply_weapons(gamestate &state, int gamemode)
 {
     switch (state.gameclass)
@@ -101,6 +116,13 @@ void GameClass::apply_respawn(gamestate &state)
     };
 }
 
+/**
+ * @brief Apply damage logic to different classes
+ * 
+ * @param state current gamestate (player or bot)
+ * @param damage  int with damage
+ * @return int with the finally applied damage
+ */
 int GameClass::apply_damage(gamestate &state, int damage)
 {
     switch (state.gameclass)

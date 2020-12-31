@@ -1550,12 +1550,22 @@ namespace game
                 s->respawn();
                 parsestate(s, p);
                 s->spawnstate(gamemode);
-                if(validteam(s->team)){
-                    s->state = CS_ALIVE;
-                }else{
-                    //s->state = CS_ALIVE;
-                    s->state = CS_SPECTATOR;
-                }    
+                if (m_edit)
+                {
+                    s->state = CS_EDITING;
+                }
+                else
+                {
+                    if (validteam(s->team))
+                    {
+                        s->state = CS_ALIVE;
+                    }
+                    else
+                    {
+                        // s->state = CS_ALIVE;
+                        s->state = CS_SPECTATOR;
+                    }
+                }
                 if(cmode) cmode->pickspawn(s);
                 else findplayerspawn(s, -1, m_teammode ? s->team : 0);
                 if(s == player1)

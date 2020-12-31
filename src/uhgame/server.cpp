@@ -2735,7 +2735,11 @@ namespace server
         ci->state.lasttimeplayed = lastmillis;
 
         //ci->team =     ? chooseworstteam(ci) : 0;
-        ci->state.state = CS_SPECTATOR;
+        if(m_edit){
+            ci->state.state = CS_EDITING;//editing for edit gamemode
+        }else{
+            ci->state.state = CS_SPECTATOR;
+        }
         ci->team = 0;
         sendwelcome(ci);
         if(restorescore(ci)) sendresume(ci);
