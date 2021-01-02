@@ -68,6 +68,7 @@ struct physent                                  // base entity type, can be affe
 
     int inwater;
     bool jumping;
+    bool leaping;
     char move, strafe, crouching;
 
     uchar physstate;                            // one of PHYS_* above

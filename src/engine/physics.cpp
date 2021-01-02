@@ -1745,7 +1745,12 @@ void modifyvelocity(physent *pl, bool local, bool water, bool floating, int curt
         if(pl->jumping && allowmove)
         {
             pl->jumping = false;
+            pl->leaping = false;
             pl->vel.z = max(pl->vel.z, pl->jumpspeed);
+        }else if(pl->leaping && allowmove){
+            pl->jumping = false;
+            pl->leaping = false;
+            pl->vel.z = max(pl->vel.z, pl->jumpspeed *2);
         }
     }
     else if(pl->physstate >= PHYS_SLOPE || water)
@@ -1754,8 +1759,15 @@ void modifyvelocity(physent *pl, bool local, bool water, bool floating, int curt
         if(pl->jumping && allowmove)
         {
             pl->jumping = false;
-
+            pl->leaping = false;
             pl->vel.z = max(pl->vel.z, pl->jumpspeed); // physics impulse upwards
+            if(water) { pl->vel.x /= 8.0f; pl->vel.y /= 8.0f; } // dampen velocity change even harder, gives correct water feel
+
+            game::physicstrigger(pl, local, 1, 0);
+        }else if(pl->leaping && allowmove){
+            pl->jumping = false;
+            pl->leaping = false;
+            pl->vel.z = max(pl->vel.z, pl->jumpspeed * 2); // physics impulse upwards
             if(water) { pl->vel.x /= 8.0f; pl->vel.y /= 8.0f; } // dampen velocity change even harder, gives correct water feel
 
             game::physicstrigger(pl, local, 1, 0);
@@ -2008,9 +2020,31 @@ dir(forward,  move,    1, k_up,    k_down);
 dir(left,     strafe,  1, k_left,  k_right);
 dir(right,    strafe, -1, k_right, k_left);
 
-ICOMMAND(jump,   "D", (int *down), { if(!*down || game::canjump()) player->jumping = *down!=0; });
-ICOMMAND(crouch, "D", (int *down), { if(!*down) player->crouching = abs(player->crouching); else if(game::cancrouch()) player->crouching = -1; });
+ICOMMAND(jump, "D", (int *down), {
+    if ((!*down || game::canjump()) && !player->leaping){
+        player->jumping = *down != 0;
+    }else if((!*down || game::canjump()) && player->leaping){
 
+    }
+});
+ICOMMAND(crouch, "D", (int *down), {
+    if (!*down)
+    {
+        player->crouching = abs(player->crouching);
+    }
+    else if (game::cancrouch())
+    {
+        player->crouching = -1;
+    }
+});
+ICOMMAND(leap, "D", (int *down), {
+    game::canjump();
+    if ((!*down || game::canjump()) && !player->leaping){
+        player->jumping = *down != 0;
+    }else if((!*down || game::canjump()) && player->leaping){
+
+    }
+});
 bool entinmap(dynent *d, bool avoidplayers)        // brute force but effective way to find a free spawn spot in the map
 {
     d->o.z += d->eyeheight; // pos specified is at feet
