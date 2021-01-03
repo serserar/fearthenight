@@ -2038,10 +2038,9 @@ ICOMMAND(crouch, "D", (int *down), {
     }
 });
 ICOMMAND(leap, "D", (int *down), {
-    game::canjump();
-    if ((!*down || game::canjump()) && !player->leaping){
-        player->jumping = *down != 0;
-    }else if((!*down || game::canjump()) && player->leaping){
+    if ((!*down || game::canleap()) && !player->leaping){
+        player->leaping = *down != 0;
+    }else if((!*down || game::canleap()) && player->leaping){
 
     }
 });

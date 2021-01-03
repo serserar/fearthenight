@@ -45,7 +45,7 @@ public:
     static void apply_respawn(gamestate& state);
     static int apply_damage(gamestate& state, int damage);
     static const char * get_class(int gameclass);
-
+    static void apply_feed(gameent& ent);
 };
 
 #endif // GAMECLASS_H
