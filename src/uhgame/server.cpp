@@ -2761,7 +2761,10 @@ namespace server
         if(ci && !ci->connected)
         {
             if(chan==0) return;
-            else if(chan!=1) { disconnect_client(sender, DISC_MSGERR); return; }
+            else if(chan!=1) { 
+                disconnect_client(sender, DISC_MSGERR);
+                return; 
+            }
             else while(p.length() < p.maxlen) switch(checktype(getint(p), ci))
             {
                 case N_CONNECT:
@@ -3041,7 +3044,32 @@ namespace server
                 else delete shot;
                 break;
             }
-
+            case N_FEED : {
+                shotevent *shot = new shotevent;
+                shot->id = getint(p);
+                shot->millis = cq ? cq->geteventmillis(gamemillis, shot->id) : 0;
+                shot->atk = getint(p);
+                loopk(3) shot->from[k] = getint(p)/DMF;
+                loopk(3) shot->to[k] = getint(p)/DMF;
+                int hits = getint(p);
+                loopk(hits)
+                {
+                    if(p.overread()) break;
+                    hitinfo &hit = shot->hits.add();
+                    hit.target = getint(p);
+                    hit.lifesequence = getint(p);
+                    hit.dist = getint(p)/DMF;
+                    hit.rays = getint(p);
+                    loopk(3) hit.dir[k] = getint(p)/DNF;
+                }
+                if(cq)
+                {
+                    cq->addevent(shot);
+                    cq->setpushed();
+                }
+                else delete shot;
+                break;
+            }
             case N_EXPLODE:
             {
                 explodeevent *exp = new explodeevent;
@@ -3557,7 +3585,10 @@ namespace server
             default: genericmsg:
             {
                 int size = server::msgsizelookup(type);
-                if(size<=0) { disconnect_client(sender, DISC_MSGERR); return; }
+                if(size<=0) { 
+                    disconnect_client(sender, DISC_MSGERR);
+                    return; 
+                }
                 loopi(size-1) getint(p);
                 if(ci) switch(msgfilter[type])
                 {

@@ -149,3 +149,13 @@ const char *GameClass::get_class(int gameclass)
     }
     return classnames[gameclass];
 }
+
+void GameClass::apply_feed(gamestate &state)
+{
+    if (state.gameclass == UNDEAD_VAMPIRE)
+    {
+        if(state.health < state.maxhealth){
+            //feed vampire
+        }
+    }
+}

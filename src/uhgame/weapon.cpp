@@ -658,7 +658,7 @@ namespace game
         int prevaction = d->lastaction, attacktime = lastmillis-prevaction;
         if(attacktime<d->gunwait ) return;
         d->gunwait = 0;
-        if(!d->attacking) return;
+        if(!d->attacking || d->attacking == ACT_FEED) return;
         
         int gun = d->gunselect, act = d->attacking, atk = guns[gun].attacks[act];
         d->lastaction = lastmillis;
@@ -725,6 +725,39 @@ namespace game
         d->gunwait = attacks[atk].attackdelay;
         if(attacks[atk].action != ACT_MELEE && d->ai) d->gunwait += int(d->gunwait*(((101-d->skill)+rnd(111-d->skill))/100.f));
         d->totalshots += attacks[atk].damage*attacks[atk].rays;
+    }
+
+    void feed(gameent *d, const vec &targ)
+    {
+        int prevaction = d->lastaction, attacktime = lastmillis - prevaction;
+        if (attacktime < d->gunwait)
+            return;
+        d->gunwait = 0;
+        if (!d->attacking || d->attacking != ACT_FEED)
+            return;
+        if (d->health == d->maxhealth)
+        {
+            if (d == player1)
+            {
+                msgsound(S_PAIN2, d);
+            }
+            return;
+        }
+        vec from = d->o, to = targ, dir = vec(to).sub(from).safenormalize();
+        float dist = to.dist(from);
+
+        if(d==player1 || d->ai)
+        {
+            if(d->clientnum==player1->clientnum)
+            {
+                int realdamage = 0;
+            }
+            //send message feed to server
+            addmsg(N_FEED, "rci2i6iv", d, lastmillis-maptime, -1,
+                   (int)(from.x*DMF), (int)(from.y*DMF), (int)(from.z*DMF),
+                   (int)(to.x*DMF), (int)(to.y*DMF), (int)(to.z*DMF),
+                   hits.length(), hits.length()*sizeof(hitmsg)/sizeof(int), hits.getbuf());
+        }
     }
 
     void adddynlights()
@@ -798,7 +831,10 @@ namespace game
     void updateweapons(int curtime)
     {
         updateprojectiles(curtime);
-        if(player1->clientnum>=0 && player1->state==CS_ALIVE) shoot(player1, worldpos); // only shoot when connected to server
+        if(player1->clientnum>=0 && player1->state==CS_ALIVE) {
+            shoot(player1, worldpos); // only shoot when connected to server
+            feed(player1, worldpos);
+        }
         updatebouncers(curtime); // need to do this after the player shoots so bouncers don't end up inside player's BB next frame
     }
     
