@@ -310,6 +310,7 @@ namespace game
 
     ICOMMAND(shoot, "D", (int *down), doaction(*down ? ACT_SHOOT : ACT_IDLE));
     ICOMMAND(melee, "D", (int *down), doaction(*down ? ACT_MELEE : ACT_IDLE));
+    ICOMMAND(bite, "D", (int *down), if (game::canbite()) {doaction(*down ? ACT_BITE : ACT_IDLE);});
     ICOMMAND(feed, "D", (int *down), if (game::canfeed()) {doaction(*down ? ACT_FEED : ACT_IDLE);});
 
     VARP(jumpspawn, 0, 1, 1);
@@ -335,6 +336,13 @@ namespace game
     }
 
     bool canfeed(){
+        ///only vampires can feed
+        if(!connected || intermission) return false;
+        if(jumpspawn) respawn();
+        return player1->state!=CS_DEAD && player1->gameclass == UNDEAD_VAMPIRE;
+    }
+
+    bool canbite(){
         ///only vampires can feed
         if(!connected || intermission) return false;
         if(jumpspawn) respawn();

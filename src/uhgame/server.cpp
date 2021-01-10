@@ -2172,7 +2172,7 @@ namespace server
             return;
         int gun = attacks[atk].gun;
         if(gs.ammo[gun]<=0 || (attacks[atk].range && from.dist(to) > attacks[atk].range + 1))
-            return;
+                return;
         gs.ammo[gun] -= attacks[atk].use;
         gs.lastshot = millis;
         gs.gunwait = attacks[atk].attackdelay;
@@ -2184,6 +2184,23 @@ namespace server
         switch(atk)
         {
             case ATK_PULSE_SHOOT: gs.projs.add(id); break;
+            case ATK_BITE_MELEE: 
+            {
+                int totalrays = 0, maxrays = attacks[atk].rays;
+                loopv(hits)
+                {
+                    hitinfo &h = hits[i];
+                    clientinfo *target = getinfo(h.target);
+                    if(!target || target->state.state!=CS_ALIVE || h.lifesequence!=target->state.lifesequence || h.rays<1 || h.dist > attacks[atk].range + 1) continue;
+
+                    totalrays += h.rays;
+                    if(totalrays>maxrays) continue;
+                    int damage = h.rays*attacks[atk].damage;
+                    dodamage(target, ci, damage, atk, h.dir);
+                    //dofeed():
+                }
+                break;
+            }
             default:
             {
                 int totalrays = 0, maxrays = attacks[atk].rays;
@@ -3044,7 +3061,7 @@ namespace server
                 else delete shot;
                 break;
             }
-            case N_FEED : {
+            case N_BITE : {
                 shotevent *shot = new shotevent;
                 shot->id = getint(p);
                 shot->millis = cq ? cq->geteventmillis(gamemillis, shot->id) : 0;

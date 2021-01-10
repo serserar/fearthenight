@@ -72,6 +72,7 @@ namespace game
     extern bool cancrouch();
     extern bool canleap();
     extern bool canfeed();
+    extern bool canbite();
     extern bool allowmove(physent *d);
     extern dynent *iterdynents(int i);
     extern int numdynents();
