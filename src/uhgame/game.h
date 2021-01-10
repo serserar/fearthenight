@@ -65,7 +65,7 @@ enum { PRIV_NONE = 0, PRIV_MASTER, PRIV_AUTH, PRIV_ADMIN };
 enum
 {
     N_CONNECT = 0, N_SERVINFO, N_WELCOME, N_INITCLIENT, N_POS, N_TEXT, N_SOUND, N_CDIS,
-    N_SHOOT, N_EXPLODE, N_SUICIDE, N_BITE,
+    N_SHOOT, N_EXPLODE, N_SUICIDE, N_FEED, N_BITE,
     N_DIED, N_DAMAGE, N_HITPUSH, N_SHOTFX, N_EXPLODEFX,
     N_TRYSPAWN, N_SPAWNSTATE, N_SPAWN, N_FORCEDEATH,
     N_GUNSELECT, N_TAUNT,
@@ -422,6 +422,7 @@ namespace game
     extern void spawnplayer(gameent *);
     extern void deathstate(gameent *d, bool restore = false);
     extern void damaged(int damage, gameent *d, gameent *actor, bool local = true);
+    extern void feed(gameent *d, gameent *actor, bool local = true);
     extern void killed(gameent *d, gameent *actor);
     extern void timeupdate(int timeremain);
     extern void msgsound(int n, physent *d = NULL);

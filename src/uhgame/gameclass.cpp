@@ -156,6 +156,8 @@ void GameClass::apply_feed(gamestate &state)
     {
         if(state.health < state.maxhealth){
             //feed vampire
+            state.health +=5;
+            if(state.health > state.maxhealth)state.health = state.maxhealth;
         }
     }
 }

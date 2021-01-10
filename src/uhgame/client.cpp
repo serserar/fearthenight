@@ -1621,7 +1621,20 @@ namespace game
                 damaged(damage, target, actor, false);
                 break;
             }
-
+            case N_FEED:
+            {
+                int tcn = getint(p),
+                    acn = getint(p),
+                    damage = getint(p),
+                    health = getint(p);
+                gameent *target = getclient(tcn),
+                       *actor = getclient(acn);
+                if(!target || !actor) break;
+                target->health = health;
+                if((target->state == CS_ALIVE || target->state == CS_DEAD)&& actor != player1) target->lastpain = lastmillis;
+                feed(target, actor, false);
+                break;
+            }
             case N_HITPUSH:
             {
                 int tcn = getint(p), atk = getint(p), damage = getint(p);

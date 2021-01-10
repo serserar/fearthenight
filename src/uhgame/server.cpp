@@ -2111,6 +2111,20 @@ namespace server
         }
     }
 
+    void dofeed(clientinfo *target, clientinfo *actor, int damage, int atk, const vec &hitpush = vec(0, 0, 0))
+    {
+        servstate &ts = target->state;
+        if(target!=actor && !isteam(target->team, actor->team)) ts.dofeed();
+        sendf(-1, 1, "ri5", N_FEED, target->clientnum, actor->clientnum, damage, ts.health);
+        // if(target==actor) target->setpushed();
+        // else if(!hitpush.iszero())
+        // {
+        //     ivec v(vec(hitpush).rescale(DNF));
+        //     sendf(ts.health<=0 ? -1 : target->ownernum, 1, "ri7", N_HITPUSH, target->clientnum, atk, damage, v.x, v.y, v.z);
+        //     target->setpushed();
+        // }
+    }
+
     void suicide(clientinfo *ci)
     {
         servstate &gs = ci->state;
@@ -2172,7 +2186,7 @@ namespace server
             return;
         int gun = attacks[atk].gun;
         if(gs.ammo[gun]<=0 || (attacks[atk].range && from.dist(to) > attacks[atk].range + 1))
-                return;
+            return;
         gs.ammo[gun] -= attacks[atk].use;
         gs.lastshot = millis;
         gs.gunwait = attacks[atk].attackdelay;
@@ -2197,7 +2211,7 @@ namespace server
                     if(totalrays>maxrays) continue;
                     int damage = h.rays*attacks[atk].damage;
                     dodamage(target, ci, damage, atk, h.dir);
-                    //dofeed():
+                    dofeed(ci, target, damage, atk, h.dir);
                 }
                 break;
             }

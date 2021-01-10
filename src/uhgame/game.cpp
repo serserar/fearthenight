@@ -397,6 +397,31 @@ namespace game
         else playsound(S_PAIN1, &d->o);
     }
 
+    void feed(gameent *d, gameent *actor, bool local){
+        if((d->state!=CS_ALIVE && d->state != CS_LAGGED && d->state != CS_SPAWNING) || intermission) return;
+        if(local) d->dofeed();
+        else if(actor==player1) return;
+
+        gameent *h = hudplayer();
+        if(h!=player1 && actor==h && d!=actor)
+        {
+            if(hitsound && lasthit != lastmillis) playsound(S_HIT);
+            lasthit = lastmillis;
+        }
+        // if(d==h)
+        // {
+        //     damageblend(damage);
+        //     damagecompass(damage, actor->o);
+        // }
+        // damageeffect(damage, d, d!=h);
+
+        //ai::damaged(d, actor);
+
+        // if(d->health<=0) { if(local) killed(d, actor); }
+        // else if(d==h) playsound(S_PAIN2);
+        // else playsound(S_PAIN1, &d->o);
+    }
+
     VARP(deathscore, 0, 1, 1);
 
     void deathstate(gameent *d, bool restore)
@@ -864,7 +889,9 @@ namespace game
         if(d->state!=CS_ALIVE) return 0;
 
         int crosshair = 0;
-        if(lasthit && lastmillis - lasthit < hitcrosshair) crosshair = 2;
+        if(lasthit && lastmillis - lasthit < hitcrosshair && d->attacking == ACT_SHOOT) {
+            crosshair = 2;
+        }    
         else if(teamcrosshair && m_teammode)
         {
             dynent *o = intersectclosest(d->o, worldpos, d);
